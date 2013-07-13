@@ -1,16 +1,23 @@
 class CreateExpense < ActiveRecord::Migration
   def change
     create_table :operating_expenses do |t|
-      t.float :management_fees
-      t.float :administrative_fees
-      t.float :payroll_and_benefits
-      t.float :maintanace
-      t.float :utilities
-      t.float :insurance
-      t.float :re_taxes
-      t.float :miscellaneous
 
-      t.timestamp
+#the attributes should be: income, proforma_id, type
+      t.float :cost
+      t.string :type
+      t.integer :proforma_id
+      t.timestamps #logs last time you updated database
+
+  #these should be captured as type.
+      # management_fees
+      # administrative_fees
+      # payroll_and_benefits
+      # maintanace
+      # utilities
+      # insurance
+      # re_taxes
+      # miscellaneous
+
     end
   end
 

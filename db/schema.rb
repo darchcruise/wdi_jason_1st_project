@@ -11,26 +11,40 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130711212431) do
+ActiveRecord::Schema.define(:version => 20130713231208) do
+
+  create_table "net_operating_incomes", :force => true do |t|
+    t.float    "cash"
+    t.integer  "proforma_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "operating_expenses", :force => true do |t|
-    t.float "management_fees"
-    t.float "administrative_fees"
-    t.float "payroll_and_benefits"
-    t.float "maintanace"
-    t.float "utilities"
-    t.float "insurance"
-    t.float "re_taxes"
-    t.float "miscellaneous"
+    t.float    "cost"
+    t.string   "type"
+    t.integer  "proforma_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "proformas", :force => true do |t|
+    t.integer "users_id"
   end
 
   create_table "revenues", :force => true do |t|
-    t.float "rent_income"
-    t.float "parking"
-    t.float "storage"
-    t.float "pet_fees"
-    t.float "laundry"
-    t.float "vending"
+    t.float    "income"
+    t.string   "type"
+    t.integer  "proforma_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
