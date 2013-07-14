@@ -4,7 +4,7 @@ class CreateExpense < ActiveRecord::Migration
 
 #the attributes should be: income, proforma_id, type
       t.float :cost
-      t.string :type
+      t.string :typ
       t.integer :proforma_id
       t.timestamps #logs last time you updated database
 

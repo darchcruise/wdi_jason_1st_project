@@ -1,4 +1,10 @@
 Wdi1stProject::Application.routes.draw do
+
+  get '/' => 'login#index'
+  get '/input' => 'form#input'
+  post '/create' => 'form#create'
+  get '/output' => 'form#output'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
