@@ -39,13 +39,24 @@ class FormController < ApplicationController
    @total_opex_year2 = @total_opex * (1 + opex_growth)
    @noi_year2 = @total_rev_year2 - @total_opex_year2
 
+   # r =
+   # #@-purchase_price = params[:purchase_price]
+   # #neg purchase price
+   # -800,000 + @noi/(1+r)**1 + @noi/(1+r)**2
+   # @sale_price = params[:sale_price]
+   # irr =
 
-   #@-purchase_price = params[:purchase_price]
-   #neg purchase price
-   -800,000 + @noi/(1+)
-   @sale_price = params[:sale_price]
+    #r = params[:discount_rate]
+    #discount_rate
+    r = 0.07
+   @npv = -8000 + @noi/(1+r)**1 + @noi_year2/(1+r)**2
 
-   irr =
+   if @npv < 0
+    puts "This is a bad investment"
+   else
+    puts "This is a good investment"
+   end #how do i get this to render in erb?
+
 
 
   end
