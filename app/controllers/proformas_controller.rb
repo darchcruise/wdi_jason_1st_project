@@ -9,7 +9,7 @@ class ProformasController < ApplicationController
     expense_types = ["management_fees","administrative_fees","payroll","maintenance","utilities","insurance","re_taxes","miscellaneous"]
 
     revenue_types.each do |rev_type|
-      revenue = @proforma.revenue.build
+      revenue = @proforma.revenues.build
       revenue.typ = rev_type
     end
   end
