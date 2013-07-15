@@ -1,0 +1,15 @@
+<%= form_for @proforma do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %> <br />
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+ <%= f.fields_for :revenues do |builder| %>
+    <%= render "revenue_fields", :f => builder %>
+  <% end %>
+  <p><%= f.submit "Submit" %></p>
+<% end %>
+
+
+

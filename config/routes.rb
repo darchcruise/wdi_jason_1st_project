@@ -1,9 +1,21 @@
 Wdi1stProject::Application.routes.draw do
 
-  get '/' => 'login#index'
-  get '/input' => 'form#input'
-  post '/create' => 'form#create'
-  get '/output' => 'form#output'
+  root to: 'login#index'
+  get '/input' => 'proformas#new' #input form
+  # post '/create' => 'proformas#create'
+  # get '/output' => 'proformas#show' #output proforma
+
+# $ rake routes
+
+#     proformas GET    /proformas(.:format)          proformas#index
+#               POST   /proformas(.:format)          proformas#create
+#  new_proforma GET    /proformas/new(.:format)      proformas#new
+# edit_proforma GET    /proformas/:id/edit(.:format) proformas#edit
+#      proforma GET    /proformas/:id(.:format)      proformas#show
+#               PUT    /proformas/:id(.:format)      proformas#update
+#               DELETE /proformas/:id(.:format)      proformas#destroy
+
+  resources :proformas
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
